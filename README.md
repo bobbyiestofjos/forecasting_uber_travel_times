@@ -60,3 +60,13 @@ Information regarding predictions and model capability...
 #
 ### Future Work
 
+
+
+
+# Repo Checklist
+repository navigation
+links to presentation
+reproduction instructions
+data science process steps
+future improvement ideas
+links to sources
