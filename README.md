@@ -87,31 +87,3 @@ The process in this project is easily scalable to additional cities for wider im
 
 Improve Modeling  
 As mentioned, the models were simplified due to processing power constraints. Addressing this will allow for more complex models providing improved forecasting.
-
-
-
----
----
----
-
-
-
-## Conclusions
-
-• For every 1,000 images:
-
-   • At a 90% prediction probability cutoff, we only have to manually check 140 images. (86% reduction of work.)
-   
-   • At a 95% prediction probability cutoff, we only have to manually check 200 images. (80% reduction of work.)
-   
-   • At a 99% prediction probability cutoff, we only have to manually check 310 images. (69% reduction of work.)
-   
-Given that the model was only able to correctly identify "cracked" images 2 out of every 3 times, I would hesitate to put this model in production at the moment. Automated deficiency detection potentially poses a safety issue if very serious cracking is missed by the algorithm. So before implementing this tool, it would be prudent to gather a larger set of images and spend more time tweaking the CNN architecture to produce more reliable results. I think the model should be correctly identifying 9 out of every 10 "cracked" images before considering putting the model to use in the real-world. 
-
-Another variable to consider is the prediction probability "cutoff" point. How much uncertainty from the model's decision-making are we willing to tolerate? There is an strong positive correlation between the model's prediction probability cutoff percentage and the number of images to be manually checked. As the prediction probability cutoff increases, so do the number of images to be manually checked. So an important question is this: are we more willing to do more manual checking to ensure the safety of building users? Or, are we willing to miss a few cracks observed on the construction site to save more time and money? This should be debated with other practicing professionals to arrive at a consensus.
-
-## Future Work
-
-To improve this project, I would use images with even more “visual noise” to train on. Furthermore, I would consider more types of materials, such as plastics, wood, composites, or even rammed earth. Finally, I would spend more time training and tuning various layers of the CNNs to improve training metrics and reduce the loss function.
-   
-In the future, I would build more CNNs to detect other types of deficiencies besides cracking. Then we could combine these models to build a tool that can detect all types of construction deficiencies. In the further future, instead of people, maybe drones could take photos of construction sites! Using a more robust version of this tool, drones could auto-identify deficient work! This would save an even more tremendous amount of time and money for architecture, engineering, and construction firms.
