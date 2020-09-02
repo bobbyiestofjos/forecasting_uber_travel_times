@@ -11,8 +11,7 @@
 - <b>notebooks</b> - Jupyter Notebooks created for this project.
     - <b>[01_data_prep.ipynb](notebooks/01_data_prep.ipynb)</b> - Data prep...
     - <b>[02_eda.ipynb](notebooks/02_eda.ipynb)</b> - Jupyter Notebook containing Exploratory Data Analysis.
-    - <b>[03_model_01_base.ipynb](notebooks/03_model_01_base.ipynb)</b> - Jupyter Notebook containing the process for creating a base model.
-    - <b>[03_model_02_all.ipynb](notebooks/03_model_02_all.ipynb)</b> - Jupyter Notebook containing the process for creating all models.
+    - <b>[03_model.ipynb](notebooks/03_model.ipynb)</b> - Jupyter Notebook containing the process for creating the models.
 - <b>[executive.ipynb](executive.ipynb)</b> - The main Jupyter Notebook containing the models and analysis for this project.
 - <b>[presentation](presentation.pdf)</b> - The presentation for this project.
 - <b>[README.md](README.md)</b> - A description of the project goals, process, and results.
@@ -41,6 +40,18 @@ Over 17 million data points across 32 csv files were pulled from the Uber Moveme
 
 For this date range the granularity was limited to monthly averages broken down by weekday and weekend trips.
 
+![time_series](images/ts.png)
+
+This plot shows the average trip time for all trips across DC by the time_of_week.
+
+
+
+![tracts](images/tracts.png)
+
+This is a plot of some of the census tracts in the DC area, outlined in red, with an example of a trip in the DC area. A trip consists of a starting tract at the tail of the green arrow and an end tract at the tip of the arrow head.
+
+Uber Movement aggregates data by trip. There are over 31,000 trips in the dataset.
+
 ---
 
 ## Modeling
@@ -55,11 +66,13 @@ There was a trade-off between model complexity and runtime due to processing pow
 
 ![predicted](images/predicted.png)
 
-This plot is for a weekday trip with the observed travel times along with the forecasted travel times from the model for 2019.
+This plot is for the average travel time of all the weekday trips across DC.
+
+The blue line represents the actual travel times, the orange line represents travel times predicted by the model, and the gray confidence interval area is a range that, with 95% certainty, the actual mean will fall within as predicted by the model.
 
 Multiple model iterations are produced for each trip using different parameters to minimize Root Mean Square Error, the metric used to determine model performance.
 
-Here the Root Mean Square Error is a measure of the differences between values forecasted by the model and the observed values. (9.31)
+Here the Root Mean Square Error is a measure of the differences between values forecasted by the model and the observed values.
 
 ### Predictions
 
@@ -73,17 +86,17 @@ These forecasts will allow urban planners to quickly look at what the next year 
 
 ## Conclusion
 
-Implement the process for model development from this project into the Uber Movement interface, or a similar web application, to allow urban planners to determine the potential impact of future city projects on forecasted travel times.
+Implementation of the models from this project into the Uber Movement interface, or a similar web application, will allow urban planners to determine the potential impact of future city projects on forecasted travel times.
 
 ---
 
 ## Future Work
 
 Road Construction  
-To assist with this I’ve pulled occupancy permit data for Washington DC to determine the effects certain types of planned roadway construction/congestion such as Construction Staging Areas, Parades, and City Events have on travel times.
+- To assist with this I’ve pulled occupancy permit data for Washington DC to determine the effects certain types of planned roadway construction/congestion such as Construction Staging Areas, Parades, and City Events have on travel times.
 
 Wider Implementation  
-The process in this project is easily scalable to additional cities for wider implementation.
+- The process in this project is easily scalable to additional cities for wider implementation.
 
 Improve Modeling  
-As mentioned, the models were simplified due to processing power constraints. Addressing this will allow for more complex models providing improved forecasting.
+- As mentioned, the models were simplified due to processing power constraints. Addressing this will allow for more complex models providing improved forecasting.
