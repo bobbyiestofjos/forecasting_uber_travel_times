@@ -6,10 +6,10 @@
 
 ## Repo Contents
 
-- <b>data</b> - Various datasets used for modeling and reference.
+- <b>data</b> - Various datasets used for modeling and reference. The raw datasets can be found on the Uber Movement website, [here](https://movement.uber.com/explore/washington_DC/travel-times/query?si=186&ti=&ag=censustracts&dt[tpb]=ALL_DAY&dt[dr][sd]=2020-03-01&dt[dr][ed]=2020-03-31&dt[wd;]=1,2,3,4,5,6,7&cd=&sa;=&sdn=&lang=en-US). They've also been included in the data/raw directory in this project.
 - <b>images</b> - Various plots and images used in the documents found in this repo.
 - <b>notebooks</b> - Jupyter Notebooks created for this project.
-    - <b>[01_data_prep.ipynb](notebooks/01_data_prep.ipynb)</b> - Data prep...
+    - <b>[01_data_prep.ipynb](notebooks/01_data_prep.ipynb)</b> - Jupyter Notebook containing the process for preparing/cleaning the dataset.
     - <b>[02_eda.ipynb](notebooks/02_eda.ipynb)</b> - Jupyter Notebook containing Exploratory Data Analysis.
     - <b>[03_model.ipynb](notebooks/03_model.ipynb)</b> - Jupyter Notebook containing the process for creating the models.
 - <b>[executive.ipynb](executive.ipynb)</b> - The main Jupyter Notebook containing the models and analysis for this project.
@@ -51,6 +51,10 @@ This plot shows the average trip time for all trips across DC by the time_of_wee
 This is a plot of some of the census tracts in the DC area, outlined in red, with an example of a trip in the DC area. A trip consists of a starting tract at the tail of the green arrow and an end tract at the tip of the arrow head.
 
 Uber Movement aggregates data by trip. There are over 31,000 trips in the dataset.
+
+![bar trips](images/bar.png)
+
+This chart shows a randomly selected small group of trips starting in tract 7 and their mean travel time for weekday trips.
 
 ---
 
@@ -100,3 +104,13 @@ Wider Implementation
 
 Improve Modeling  
 - As mentioned, the models were simplified due to processing power constraints. Addressing this will allow for more complex models providing improved forecasting.
+
+---
+
+## Resources
+
+Uber Movement (the data used in this project)
+- [website](https://movement.uber.com/explore/washington_DC/travel-times/query?si=186&ti=&ag=censustracts&dt[tpb]=ALL_DAY&dt[dr][sd]=2020-03-01&dt[dr][ed]=2020-03-31&dt[wd;]=1,2,3,4,5,6,7&cd=&sa;=&sdn=&lang=en-US)
+
+Machine Learning Mastery (the iterative process for selecting the SARIMA parameters with the lowest Root Mean Squared Error)
+- [website](https://machinelearningmastery.com/how-to-grid-search-sarima-model-hyperparameters-for-time-series-forecasting-in-python/)
